@@ -5,6 +5,13 @@ Todo List | Manage your daily tasks using TODO LISTS web application
 
 <br>
 
+<img src="https://img.shields.io/github/stars/marcelogaldino/todoList"/>
+<img src="https://img.shields.io/github/forks/marcelogaldino/todoList"/>
+<img src="https://img.shields.io/github/issues/marcelogaldino/todoList"/>
+<img src="https://img.shields.io/github/license/marcelogaldino/todoList"/>
+
+<br>
+
 ## Description
 <p align="center">Todo List use local storage resource providing you a better experience managing your daily tasks</p>
 
@@ -13,11 +20,6 @@ Todo List | Manage your daily tasks using TODO LISTS web application
 <img src="./assets/todo.gif"/>
 
 <br>
-
-<img src="https://img.shields.io/github/stars/marcelogaldino/todoList"/>
-<img src="https://img.shields.io/github/forks/marcelogaldino/todoList"/>
-<img src="https://img.shields.io/github/issues/marcelogaldino/todoList"/>
-<img src="https://img.shields.io/github/license/marcelogaldino/todoList"/>
 
 ## STACK
 
