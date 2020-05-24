@@ -4,6 +4,7 @@
 Todo List | Manage your daily tasks using TODO LISTS web application
 
 <br>
+<br>
 
 <img src="https://img.shields.io/github/stars/marcelogaldino/todoList"/>
 <img src="https://img.shields.io/github/forks/marcelogaldino/todoList"/>
