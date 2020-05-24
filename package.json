@@ -1,0 +1,36 @@
+{
+  "name": "rgb-color",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r RGB color | Find your RGB colors easily!",
+  "main": "main.js",
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelogaldino/rgb-color.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/marcelogaldino/rgb-color/issues"
+  },
+  "homepage": "https://github.com/marcelogaldino/rgb-color#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
