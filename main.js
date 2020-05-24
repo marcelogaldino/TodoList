@@ -1,49 +1,43 @@
-window.addEventListener('load', start)
-
-const globalTasks = JSON.parse(localStorage.getItem('list_todos')) || []
-
 let inputName = null
 let currentIndex = null
 let isEditing = false
 
-function start() {
+let globalTasks = JSON.parse(localStorage.getItem('list_todos')) || []
+
+window.addEventListener('load', () => {
     inputName = document.querySelector('#inputName')
 
     preventDefaultFormSubmit()
     activateInput()
     render()
-}
+})
 
-function preventDefaultFormSubmit() {
-    function handleFormSubmit(e){
-        e.preventDefault()       
-    }
+const preventDefaultFormSubmit = () => {
+    const handleFormSubmit = e => e.preventDefault()
     
     const form = document.querySelector('form')
     form.addEventListener('submit', handleFormSubmit)
 }
 
-function saveTasks() {
-    localStorage.setItem('list_todos', JSON.stringify(globalTasks))
-}
+const saveTasks = () => localStorage.setItem('list_todos', JSON.stringify(globalTasks))
 
-function activateInput() {
-    function insertTask(newTask) {
-        globalTasks.push(newTask)
+const activateInput = () => {
+    const insertTask = newTask => {
+        globalTasks = [...globalTasks, newTask]
         saveTasks()
         render()
     }
 
-    function updateTask(newTask) {
+    const updateTask = newTask => {
         globalTasks[currentIndex] = newTask
+        saveTasks()
         render()
     }
 
-    function handleTyping(e) {
+    const handleTyping = (e) => {
         if(e.keyCode == 13 && inputName.value !== '') {
             if(isEditing) {
                 updateTask(e.target.value )
-                console.log('editing')
             } else {
                 let typedTask = e.target.value 
                 insertTask(typedTask)
@@ -52,22 +46,18 @@ function activateInput() {
             clearInput()
         }
     }
-
     inputName.focus()
     inputName.addEventListener('keyup', handleTyping)
 }
 
-function render() {
-    function createSpanTask(task, index) {
-        function editItem() {
+const render = () => {
+    const createSpanTask = (task, index) => {
+        const editItem = () => {
             inputName.value = task
             inputName.focus()
             isEditing = true
             currentIndex = index
-            console.log(currentIndex)
-
         }
-
 
         const span = document.createElement('span')
         span.classList.add('clickable')
@@ -79,10 +69,9 @@ function render() {
         return span
     }
 
-    function createDeleteButton(index) {
-        
-        function deleteTask() {
-            globalTasks.splice(index, 1)
+    const createDeleteButton = index => {
+        const deleteTask = () => {
+            globalTasks = globalTasks.filter((_, i) => i !== index)
             saveTasks()
             render()
         }
@@ -116,8 +105,8 @@ function render() {
 
         li.appendChild(button)
         li.appendChild(span)
-        
-        function messageHelpText() {
+
+        const messageHelpText = () => {
             textExplained.classList.add('helpText')
             textExplained.textContent = `Clique para editar ${currentTask}`
             
@@ -126,11 +115,11 @@ function render() {
             return textExplained
         }
 
-        function clearMessageHelpText() {
+        const clearMessageHelpText = () => {
             textExplained.textContent = ''
-        }
+        } 
 
-        function messageHelpTextButton() {
+        const messageHelpTextButton = () => {
             textExplained.classList.add('helpText')
             textExplained.textContent = `Double click para deletar ${currentTask}`
             
@@ -139,7 +128,7 @@ function render() {
             return textExplained
         }
 
-        function clearMessageHelpTextButton() {
+        const clearMessageHelpTextButton = () => {
             textExplained.textContent = ''
         }
 
@@ -158,7 +147,7 @@ function render() {
     clearInput()
 }
 
-function clearInput() {
+const clearInput = () => {
     inputName.value = ''
     inputName.focus()
 }
