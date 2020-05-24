@@ -6,7 +6,7 @@ Todo List | Manage your daily tasks using TODO LISTS web application
 <br>
 
 ## Description
-<p>Todo List use local storage resource providing you a better experience managing your daily tasks</p>
+<p align="center">Todo List use local storage resource providing you a better experience managing your daily tasks</p>
 
 <br>
 
